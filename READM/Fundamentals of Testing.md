@@ -51,7 +51,7 @@ Test Activities
                                       |_ Any testware that may be useful in the future is identified
                                       |_ The test activities are analyzed to identify lessons learned and improvements for future iterations, releases, or projects
                                       |_ A test completion report is created and communicated to the stakeholders.
-'''
+
 Testing is based on Context:
 --
 ->testing is carried out will depend on a number of contextual factors including:
