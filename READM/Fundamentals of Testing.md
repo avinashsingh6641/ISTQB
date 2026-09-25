@@ -1,10 +1,10 @@
 24/09/2026
 # Ch 1 : Fundamentals of Testing:
-
+<pre>
 Testing is a major from of QC(Quality control), other methods of QC is (model checking and proof of correctness), simulation and prototyping.
 QC is Product Oriented, corrective approach.  ---> detect Defects and failure.            ---> is the product right?
 QA is process Oriented , preventive approach.  ---> improve process and prevent problem.    ---> is the process right?
-
+</pre>
 errors,defects,failures,root cause
 --
     Human beings make errors (mistakes), which produce defects (faults, bugs), which in turn may result in failures.
@@ -53,6 +53,7 @@ Test Activities
 </pre>
 Testing is based on Context:
 --
+<pre>
 ->testing is carried out will depend on a number of contextual factors including:
     . Stakeholders (needs, expectations, requirements, willingness to cooperate, etc.)
     • Team members (skills, knowledge, level of experience, availability, training needs, etc.)
@@ -63,9 +64,10 @@ Testing is based on Context:
     • Organizational factors (organizational structure, existing policies, practices used, etc.)
     • Software development lifecycle (engineering practices, development methods, etc.)
     • Tools (availability, usability, compliance, etc.)
-
+</pre>
 Testware
 --
+<pre>
   --> Testware is created as output work products from the test activities
   • Test planning work products include:
       |_ test plan, test schedule, risk register, and entry and exit criteria 
@@ -85,9 +87,10 @@ Testware
   • Test completion work products include:
       |_ test completion report, action items for improvement of subsequent projects or iterations, documented lessons learned, and change
          requests (e.g., as product backlog items).
-
+</pre>
 Roles in Testing
 -
+<pre>
 Two Roles : 1) test management role 2) testing role
 . Test management Role:
      |_ The test management role takes overall responsibility for the test process, test team and leadership of the test activities.
@@ -99,9 +102,10 @@ who get what role is purely based on project and product context, the skills of 
     Different people may take on these roles at different times. For example, the test management role can
     be performed by a team leader, by a test manager, by a development manager, etc. It is also possible for
     one person to take on the roles of testing and test management at the same time.
-
+</pre>
 Essential Skills and Good Practice in Testing
 -
+<pre>
 Generic Skills Required for Testing:
     • Testing knowledge (to increase effectiveness of testing, e.g., by using test techniques)
     • Thoroughness, carefulness, curiosity, attention to details, being methodical (to identify defects,
@@ -125,3 +129,4 @@ Independence of Testing:
          |_ developers performing component and component integration testing,
          |_ test team performing system and system integration testing,
          |_ and business representatives performing acceptance testing.
+</pre>
