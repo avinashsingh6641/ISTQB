@@ -20,7 +20,6 @@ Testing Priciples:
 
 Test Activities
 --
-'''
    1) test planning              ---> consists of defining the test objectives and then selecting an approach that best achieves
                                       the objectives within the constraints imposed by the overall context.
    2) test monitor and control   ---> Test control involves taking the actions necessary to
