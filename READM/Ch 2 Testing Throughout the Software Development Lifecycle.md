@@ -130,11 +130,41 @@ Test Levels and Test Types
         The main forms of acceptance testing are:
         user acceptance testing (UAT), operational acceptance testing, contractual and regulatory acceptance testing,
         alpha testing and beta testing.
+
+      Points to remeber :
+            Component testing	 One component
+            Component integration	Component ↔ Component
+            System testing	Complete system
+            System integration	System ↔ Other system/external service
+            Acceptance	Business/user needs
   Test Types:
       . Functional Testing
+          Examples: User should be able to reset their password.
+          Functional testing focuses on what the system does.
       . Non Functional Testing
+          How well does the system perform?
+          Examples:Performance,Usability,Security,Reliability,Compatibility,Scalability
+                    Can 10,000 users log in simultaneously?
       . Black-box Testing
+          You care about:
+          Input → Expected result
+          You don't need to know how the code works internally.
+  
+               INPUT
+                 ↓
+           ┌─────────────┐
+           │ Application │
+           └─────────────┘
+                 ↓
+               OUTPUT
+          Types:
+            |_ Equivalence partitioning
+            |_ Boundary value analysis
+            |_ Decision table testing
+            |_ State transition testing
+
       . White Box Testing
+          White-box testing considers the internal structure/code of the software.
   
 </pre>
 Confirmation Testing and Regression Testing
@@ -157,6 +187,7 @@ Confirmation Testing and Regression Testing
 Maintenance Testing
 -
 <pre>
+  The software is already in use → something changes → we need testing.
   can be done when , hot fixes, or migration of environment from one system to another, or retirement of application
   involves
   |_ planned release/deployments
@@ -165,6 +196,39 @@ Maintenance Testing
     • The degree of risk of the change
     • The size of the existing system
     • The size of the change
+</pre>
+
+Quick Summary to remember for paper
+-
+<pre>
+  What are you testing?
+        │
+        ├── One component
+        │       → Component testing
+        │
+        ├── Components interacting
+        │       → Component integration testing
+        │
+        ├── Complete application
+        │       → System testing
+        │
+        ├── Application + external system
+        │       → System integration testing
+        │
+        └── Business/user acceptance
+                → Acceptance testing
+
+  A defect was fixed
+       │
+       ├── Is the defect fixed?
+       │       → Confirmation testing
+       │
+       └── Did the change break something else?
+               → Regression testing
+
+  Existing system changed
+        ↓
+  Maintenance testing
 </pre>
 
 
