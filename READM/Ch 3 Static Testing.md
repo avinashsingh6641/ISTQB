@@ -177,4 +177,128 @@ Typical defects that are easier and/or cheaper to find through static testing in
     Regular feedback gives developers and testers a better understanding of:
       |_ What does the stakeholder actually need?
     Stakeholder feedback means getting their input about the product, requirements, features, and progress.
+
+    Review Process Activities
+      1. Planning
+          Meaning: Decide what, why, how, who, and when the review will happen.
+          Things decided include:
+              |_ Purpose — Why are we reviewing? 
+              |_ Work product — What are we reviewing? (e.g., requirements document)            
+              |_ Quality characteristics — What are we checking? (e.g., correctness, completeness)            
+              |_ Focus areas — Which parts need special attention?           
+              |_ Exit criteria — When can we say the review is finished?           
+              |_ Standards/supporting information — What guidelines or standards will we use?            
+              |_ Effort and schedule — How much time and effort will it take?
+      2. Review Initiation
+          Meaning: Make sure everyone and everything is ready before starting.        
+          This includes:        
+              |_ Giving reviewers access to the work product.         
+              |_ Making sure everyone knows their role and responsibility.           
+              |_ Providing checklists, standards, tools, and other required information.          
+              |_ Ensuring participants are prepared.
+      3. Individual Review
+          Meaning: Each reviewer examines the work product independently.
+          Reviewers look for:       
+              |_ Anomalies — anything that appears unusual or potentially problematic.            
+              |_ Recommendations — suggestions for improvement.            
+              |_ Questions — things that need clarification.            
+              |_ They can use techniques such as:            
+              |_ Checklist-based reviewing           
+              |_ Scenario-based reviewing            
+              |_ They record everything they find.
+          Important: At this stage, an anomaly is not automatically a defect.
+      4. Communication and Analysis
+          Meaning: Discuss and analyze the findings from all reviewers.
+          Why? Because an identified anomaly may or may not actually be a defect.
+          The team decides for each anomaly:
+              |_ Is it actually a defect?          
+              |_ Who is responsible for it?            
+              |_ What action is required?            
+              |_ Does it need to be fixed?    
+              |_ Is it simply a clarification or recommendation? 
+              
+          The team may also:        
+              |_ Determine the quality level of the work product.      
+              |_ Decide follow-up actions.         
+              |_ Decide whether another review is necessary.
+      5. Fixing and Reporting
+          Meaning: Correct the confirmed defects and document the results.
+          For each confirmed defect:        
+              |_ Create a defect report.            
+              |_ Assign corrective action.            
+              |_ Track the correction.            
+              |_ Perform follow-up review if necessary.            
+          When the exit criteria are satisfied:            
+              |_ The work product can be accepted.            
+              |_ The review results are reported.
+
+    Roles and Responsibilities in Reviews
+        • Manager – decides what is to be reviewed and provides resources, such as staff and time for the
+                    review
+        • Author – creates and fixes the work product under review
+        • Moderator (also known as the facilitator) – ensures the effective running of review meetings,
+                  including mediation, time management, and a safe review environment in which everyone can
+                  speak freely
+        • Scribe (also known as recorder) – collates anomalies from reviewers and records review
+                  information, such as decisions and new anomalies found during the review meeting
+        • Reviewer – performs reviews. A reviewer may be someone working on the project, a subject
+                  matter expert, or any other stakeholder
+        • Review leader – takes overall responsibility for the review such as deciding who will be involved,
+                  and organizing when and where the review will take place
+
+    Review Types
+      1. Informal Review
+          A quick, flexible review with no fixed process and no formal documentation required.
+          Informal = Quick check
+      2. Walkthrough
+          The author leads the review and explains the work product to the other participants.
+          Walkthrough = Author leads
+      3. Technical Review
+          A review performed by technically qualified reviewers and led by a moderator.
+          The focus is generally on solving or deciding about technical issues.
+          Technical Review = Technical experts + Moderator + Technical decisions
+      4. Inspection
+          An inspection is the most formal type of review.      
+          It follows the complete generic review process:        
+              |_ Planning → Review initiation → Individual review → Communication & analysis → Fixing & reporting
+          Inspection = Most formal + Maximum anomalies + Metrics + Author cannot lead/scribe
+
+    Success Factors for Reviews
+    Remember the 9 factors:
+      . Clear objectives + measurable exit criteria  -> Evaluating the participants should NEVER be an objective.
+      . Right review type 
+          |_ For example:
+              Quick feedback → Informal review
+              Author wants to explain the document → Walkthrough        
+              Technical decision → Technical review        
+              Very formal review with maximum anomaly detection → Inspection
+      . Small chunks    -> Don't give reviewers a huge document to review all at once.
+      . Feedback 
+          |_ The results of reviews should be communicated to:
+              . Authors
+              . Relevant stakeholders
+      . Enough preparation time
+          Reviewers need sufficient time to:
+            |_ Read the work product        
+            |_ Understand the context        
+            |_ Use checklists        
+            |_ Identify anomalies       
+            |_ Prepare questions
+      . Management support  
+          Management should support the review process by providing things such as:
+            |_ Time
+            |_ Resources
+            |_ Training
+            |_ Appropriate participants
+      . Review culture  ->  Reviews should become a normal part of the organization's way of working.
+
+      . Training  ->    Everyone involved should understand their role and responsibilities. 
+      . Facilitation
+          When a review meeting is held, it should be well facilitated.
+          The facilitator/moderator helps ensure that:
+            |_ The meeting stays focused          
+            |_ Everyone gets an opportunity to contribute          
+            |_ Discussions don't go off-topic          
+            |_ Decisions are made
+            |_ The meeting stays within the planned time
   </pre>
