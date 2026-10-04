@@ -175,10 +175,10 @@ Black-Box Test Techniques
       Customer is a premium member, AND   
       Order amount is ₹500 or more.
     We can create a decision table:
-      Conditions / Rules  |  	Rule 1 |	Rule 2 |	Rule 3 |	Rule 4
-      ------------------------------------------------------
-      Premium member?	    |   T	     | T	     | F	     | F
-      Order ≥ ₹500?	      |   T	     | F	     | T	     | F
+      Conditions / Rules  |  Rule 1 | Rule 2   |Rule 3   |	Rule 4
+      --------------------------------------------------------------
+      Premium member?	  |   T	     | T	   | F	     | F
+      Order ≥ ₹500?	      |   T	     | F	   | T	     | F
       Free delivery       |   X      |         |         | 
   
     Now we have 4 possible combinations.
@@ -272,4 +272,279 @@ Black-Box Test Techniques
 </pre>
 <pre>
   State Transition Testing
+    State Transition Testing is a black-box test design technique used when a system's behavior depends on 
+    its current state and an event that occurs.
+    The main idea is:
+        The same event can produce different results depending on the current state of the system.
+        1. What is a State?
+            A state describes the current condition or situation of a system.
+            For example, consider a login system: Logged Out , Logged In , Account Locked
+        2. What is a Transition?
+            A transition is the movement from one state to another because of an event.
+            Logged Out
+                |
+                | Correct username + password
+                ↓
+            Logged In
+            Here:
+                Current state = Logged Out           
+                Event = Correct username + password            
+                Next state = Logged In          
+                That movement is called a transition.
+        3. State Transition Diagram
+            A state transition diagram visually represents: States, Events, Transitions, Sometimes conditions and actions
+                    Correct Login
+               ┌────────────────────┐
+               │                    ↓
+            [Logged Out] ───────→ [Logged In]
+               ↑                     │
+               │                     │ Logout
+               └─────────────────────┘
+        4. Event, Guard Condition and Action
+            event [guard condition] / action
+            Event -> Something that causes a transition. e.g login
+            Guard condition -> A condition that must be true for the transition to happen. e.g valid login id and password
+            Action -> Something the system does as a result. e.g show user dashboard
+            summary:
+                Login [password correct] / Display dashboard
+        6. State Table
+            The same model can be represented as a state table instead of a diagram.
+            Current State	     Insert Card	     Enter PIN	         Logout
+            Card Not Inserted	 Card Inserted	        —	                —
+            Card Inserted	     —	                 PIN Verification	    —
+            PIN Verification	 —	                 Authenticated	        —
+            Authenticated	     —	                 —	                  Card Not Inserted
+            Here:
+                Rows = states             
+                Columns = events              
+                Cells = resulting transitions
+    
+            A state table explicitly shows invalid transitions.
+            The empty cells indicate that the transition is invalid/not defined.
+        7. Test Case = Sequence of Events
+
+        Note : One test case can cover multiple transitions.
+
+        8. Three Important Coverage Types
+            |_ All States Coverage
+            |_ Valid Transitions Coverage (0-switch)          
+            |_ All Transitions Coverage
+
+            1) all state coverage
+                Here we only care about visiting every state.
+                Coverage item = State
+                suppose A → B → C → D
+                To achieve 100% all-states coverage: you must visit A,B,C,D for 100% coverage
+            2) valid transitions coverage
+                this is stronger approach then all state coverage
+                also called as 0-switch coverage
+                Here we care about every valid transition.
+                Coverage item = Valid transition
+            3) all transitions coverage
+                This is the strongest of the three.
+                It requires testing:
+                    |_ All valid transitions          
+                    |_ Attempting all invalid transitions
+                Why Test Invalid Transitions?
+                    Because invalid behaviour can contain defects too.
+                    For example: A locked account should reject a login attempt.
+        9. Fault Masking
+            important istqb question
+            Suppose we want to test two invalid transitions:
+            If we put both into the same test case and the first defect causes the test to stop,
+            we might never reach the second invalid transition.
+            That's called fault masking.
+            therefore, Test only one invalid transition in a single test case to help avoid fault masking.
+
 </pre>
+White-Box Test Techniques
+-
+<pre>
+    two code-related white-box test techniques:
+        • Statement testing
+        • Branch testing
+    1) Statement Testing & Statement Coverage
+        “Have my tests executed every line of executable code at least once?”
+        1. What is a statement?
+            A statement is an executable instruction in the program.    
+        example:
+            1. read age
+            2. if age >= 18
+            3.     print "Adult"
+            4. else
+            5.     print "Minor"
+            6. end
+        2. What is Statement Testing?
+            In statement testing, we create test cases so that the program executes as many statements as possible.
+        3. What is Statement Coverage?
+            The formula is:
+            
+            Statement Coverage = (Number of statements executed/Total executable statements) * 100
+           
+        4. What does 100% statement coverage mean?
+            Every executable statement has been executed at least once by your test cases.
+            Note : 100% statement coverage does NOT mean the software is defect-free.
+            Because simply executing a statement doesn't guarantee that you've
+            tested all possible situations involving that statement.
+            example divisible by zero problem if your code contain number divisbility ,and you executed that statement by >0 number,
+            you didint check for potential bug what will happen for 0 and code have potential bug
+    
+    2) Branch Testing & Branch Coverage
+        “Have my tests taken every possible route through the decisions in the code?”
+        1. What is a branch?
+            A branch is a possible transfer of control from one part of the program to another.
+        example:
+            if (age >= 18)
+                print("Adult");
+            else
+                print("Minor");
+        There are two possible branches:
+            True branch → age >= 18 → print "Adult"         
+            False branch → age < 18 → print "Minor"      
+            So we need tests for both outcomes.
+        2. What is Branch Testing?
+            In branch testing, we design test cases to execute the different branches of the code.
+            Branch Coverage = (Number of branches exercised /Total number of branches) * 100
+        3. What does 100% Branch Coverage mean?
+            Every branch in the code has been exercised by at least one test case.
+            This includes:
+                |_ Conditional branches — True/False outcomes of decisions
+                |_ Unconditional branches — normal/straight-line transfers of control
+
+    Note important:
+        Branch coverage subsumes statement coverage.
+        means -> 100% branch coverage automatically gives you 100% statement coverage.
+        But even 100% Branch Coverage is NOT enough
+            Even if you achieve 100% branch coverage, you may still miss defects
+            that require a specific path through the code.
+
+</pre>
+<pre>
+    The Value of White-box Testing
+    1. What is White-box Testing?
+        Testing based on the internal structure and implementation of the software.
+        You look at the code, logic, conditions, branches, statements, paths, etc., and design tests based on them.
+    2. Main Strength of White-box Testing
+        The entire software implementation is taken into account during testing.
+        In simple words: White-box testing looks inside the code.
+        Therefore, even if the requirements/specification are:
+            |_ unclear
+            |_ incomplete
+            |_ outdated
+            |_ poorly documented
+        you can still find some defects by examining and testing the actual implementation of code.
+    3. Main Weakness of White-box Testing
+        White-box testing may miss defects of omission.
+        Something that should have been implemented is completely missing from the software.
+        e.g 
+        The system should allow customers to pay using:
+            Credit card
+            Debit card
+            UPI
+        But the developer only implements:
+            Credit card
+            Debit card
+        That's a defect of omission.
+        White-box is good at finding what's wrong inside the code, but it can miss what's completely missing from the code.
+    4. White-box Testing Can Also Be Used in Static Testing
+        White-box techniques don't necessarily require the code to execute.
+        For example, a developer or tester can inspect: source code, pseudocode, algorithms, control flow, logic
+        without actually running the program.
+    5. What is a Control Flow Graph?
+        A control flow graph (CFG) represents the possible flow of execution through the code.
+                Start
+                  ↓
+             age >= 18?
+               ↙     ↘
+            True     False
+             ↓         ↓
+          Adult      Minor
+               ↘     ↙
+                 End7
+    6. White-box Coverage Gives an Objective Measurement
+        White-box techniques provide measurable coverage such as:
+            |_ Statement coverage
+            |_ Branch coverage
+        This gives you an objective indication of how much of the executable code has been exercised.
+    
+</pre>
+Experience-based Test Techniques
+-
+<pre>
+    • Error guessing
+    • Exploratory testing
+    • Checklist-based testing
+
+    1) error guessing
+        1. How does Error Guessing work?
+            A tester uses knowledge such as:           
+            |_ How this application behaved in the past          
+            |_ What mistakes the developers commonly make           
+            |_ What defects have occurred in similar applications            
+            |_ Common reasons why software fails
+        2. What types of problems can Error Guessing target?
+            A. Input errors -> Examples: Correct input is rejected, Required parameter is missing, Wrong parameter is supplied,
+                                        Empty input, Very large input, Invalid characters
+            B. Output errors -> Examples: Wrong result, Wrong format, Missing output, Incorrect rounding
+            C. Logic errors -> The developer may implement the wrong logic.
+            D. Computation errors -> The calculation itself may be wrong.
+            E. Interface errors -> Problems can occur when two components communicate.
+            F. Data errors -> Problems with data can also be guessed. -> Incorrect initialization, Wrong data type,
+                                                                         Incorrect default value, Data stored incorrectly
+    
+        3. Fault Attack:
+            A more systematic/methodical form of error guessing.
+            Fault Attack = “Let's make a list of those mistakes and systematically test for them.”
+            The tester creates or obtains a list of possible errors, defects, and failures,
+            and then designs tests specifically to expose them.
+            From previous experience, you create a fault list:
+            Then you deliberately create tests for these possible faults.
+    
+    2) Exploratory Testing
+        Exploratory testing means the tester learns, designs tests, executes tests, and evaluates results at the same time.
+        Exploratory testing = “Explore the software while testing it.”
+        Learn → Design → Execute → Evaluate → Learn more → Design next test...
+        Why is it called "Exploratory"?
+            Because the tester is exploring the test object.
+            |_ The tester may discover:        
+            |_ New functionality         
+            |_ Unexpected behavior          
+            |_ Potential defects           
+            |_ Areas that need deeper testing           
+            |_ Areas that haven't been tested yet        
+            |_ The new knowledge then influences the next tests.
+        1. Session-Based Exploratory Testing
+            A session is performed within a defined time-box.
+            What is a time-box?
+            A fixed amount of time.
+            The tester doesn't necessarily have a complete list of detailed test cases.
+            Instead, they have a test charter.
+        2. What is a Test Charter?
+            A test charter provides the objectives/direction for the exploratory session.
+            Test charter = Where/what should I explore?
+            Tester = How exactly will I explore it?
+        3. What happens after the session?
+            Usually, there is a debriefing.
+            The tester discusses the session with interested stakeholders.
+        4. Test Session Sheets
+            The tester may use a test session sheet to record:
+                Steps performed
+                Areas explored              
+                Important observations             
+                Defects discovered             
+                Questions            
+                Ideas for further testing
+        5. When is Exploratory Testing Useful?
+            A. Few or inadequate specifications  -> Suppose the requirements are incomplete:
+            B. Significant time pressure. -> Suppose you have only one day to test a new feature.
+            C. Complementing formal testing. -> Exploratory testing doesn't have to replace other techniques.
+        6. Tester Skill Matters -> Experience, Domain knowledge, Analytical skills, Curiosity, Creativity
+        7. Exploratory Testing Doesn't Mean "Random Testing"
+            With session-based exploratory testing, you have even more structure:
+            Test Charter → Time-box → Explore → Record discoveries → Debrief
+
+
+
+    
+</pre>
+
