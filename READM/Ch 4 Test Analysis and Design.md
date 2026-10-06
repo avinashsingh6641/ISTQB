@@ -542,9 +542,135 @@ Experience-based Test Techniques
         7. Exploratory Testing Doesn't Mean "Random Testing"
             With session-based exploratory testing, you have even more structure:
             Test Charter → Time-box → Explore → Record discoveries → Debrief
+   
+</pre>
+Collaboration-based Test Approaches
+-
+<pre>
+    1) Collaborative User Story Writing
+        a user story describes a feature that provides value to a user or purchaser of the software.
+            |_ “Who wants what, and why?”
+        The 3 C’s of a User Story
+            |_ Card -> The Card is where the user story is written or recorded. -> e.g Jira
+            |_ Conversation -> The Conversation is the discussion about the user story. ->  The conversation can be spoken or documented.
+            |_ Confirmation -> The Confirmation is the acceptance criteria.
+        User Story Format
+            |_ As a [role], I want [goal], so that [business value].
+                e.g As a customer, I want to reset my password, so that I can access my account if I forget my password.
+        Collaborative User Story Writing
+            |_ Different people work together, particularly:
+                Business → What value does the customer need?   
+                Development → How can we implement it?           
+                Testing → How can we verify it?
+        INVEST
+            |_ I N V E S T = Independent, Negotiable, Valuable, Estimable, Small, Testable
+
+    2) Acceptance Criteria
+        Acceptance criteria are the conditions that a user story must satisfy before stakeholders accept it.
+            |_ “What must be true for us to say that this user story is successfully completed?”
+        Where do Acceptance Criteria come from?
+            |_ Where do Acceptance Criteria come from?
+                Conversation → defines what is expected → Acceptance Criteria → confirms it works
+        Why are Acceptance Criteria used?
+            1. Define the scope of the user story
+                They tell us what is included and what is not included in the story.
+            2. Reach consensus among stakeholders
+                Different stakeholders may have different expectations.
+                So business, developers, testers, and other stakeholders have a shared understanding.
+            3. Describe positive and negative scenarios
+            4. Provide a basis for acceptance testing
+                Acceptance criteria become the basis for user story acceptance testing.
+            5. Allow accurate planning and estimation
+                Clear acceptance criteria help the development and testing teams understand the amount of work required.
+        two common ways of writing acceptance criteria.
+            A. Scenario-oriented
+                Given → When → Then
+                This format is commonly associated with BDD (Behavior-Driven Development).
+                Example
+                Scenario: Successful password reset            
+                Given the customer has a registered email address
+                When the customer requests a password reset
+                Then the system sends a password-reset link to the registered email
+            B. Rule-oriented
+                Acceptance criteria can also be written as a verification checklist
+                or a table showing inputs and expected outputs.
+                Example: 
+                    |_ Verification checklist / bullet points
+                        . Password must contain at least 8 characters.               
+                        . Password must contain a number.                   
+                        . Password must contain a special character.                  
+                        . Invalid passwords must be rejected.                 
+                        . Valid passwords must be accepted.
+                    |_ Or using input/output mapping.
+                        Input	                                Expected Output
+                        ---------------------------------------------------------
+                        Valid password	                        Password accepted
+                        Password < 8 characters	                Error displayed
+                        Password without number	                Error displayed
+                        Password without special character	    Error displayed
+            Can we use other formats?
+                teams can use a custom format if necessary.
+                The important requirement is that the acceptance criteria are: Well-defined, Unambiguous
+                In other words, everyone should understand them in the same way.
+                            
+    3) Acceptance Test-Driven Development (ATDD)
+        Create acceptance tests BEFORE implementing the user story(developing or wiriting code).
+        It is a test-first approach.
+        Instead of developing the login feature first and testing it later, ATDD does this:
+        User Story → Acceptance Criteria → Test Cases → Development → Execute Tests
+        So the team decides how the feature will be tested before coding begins.
+        Who Creates the Tests?
+            ATDD encourages collaboration between people with different perspectives:Customer / Business, Developer, Tester
+            Because each person sees the requirement differently.
+        steps:
+            Step 1 — Specification Workshop -> The specification workshop happens before creating the test cases.
+                    its acceptance criteria are analyzed, discussed, and written by the team members.
+                    Incompleteness, ambiguities, or defects in the user story are resolved during this process.
+            Step 2 — Create Test Cases -> After the requirements and acceptance criteria are clear,
+                    the team creates acceptance test cases.
+                    The tests can be created: By the whole team, or By the tester individually
+                    The test cases are based on the acceptance criteria. They can be: Manual, Automated
+        Tests as Examples
+            |_ In ATDD, test cases can also be viewed as examples of how the software should behave.
+        Positive Testing First
+            |_ Typically, the team starts with positive test cases.
+            |_ These verify that the system works correctly when everything goes as expected.
+            |_ After positive testing, the team performs negative testing.
+            |_ Then the team should also consider non-functional quality characteristics.
+                |_ Performance efficiency, Usability
+        Test Cases Should Be Understandable
+            |_ ATDD test cases should be written so that stakeholders can understand them.
+            |_ They are typically written using natural language.
+            |_ The customer should be able to understand what this test means without needing programming knowledge.
+        Test Cases Must Stay Within the User Story
+            |_ Cover all characteristics of the user story but should not go beyond it.
+            |_ No two test cases should describe the same characteristic of the user story.
+        Test Techniques Can Be Used
+            |_ Equivalence Partitioning, Boundary Value Analysis, Decision Tables, State Transition Testing, Other appropriate techniques
+            |_ So ATDD does not replace test design techniques.
+        Automation
+            |_ If the tests are written in a format supported by a test automation framework,
+                developers can create the supporting automation code while implementing the feature.
+
+        ATDD Flow — Remember This
+            User Story
+                 ↓
+            Specification Workshop
+                 ↓
+            Acceptance Criteria
+                 ↓
+            Create Acceptance Test Cases
+                 ↓
+            Positive Testing
+                 ↓
+            Negative Testing
+                 ↓
+            Non-functional Testing
+                 ↓
+            Implement User Story
+                 ↓
+            Execute Acceptance Tests
 
 
-
-    
 </pre>
 
