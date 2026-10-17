@@ -524,9 +524,55 @@ Configuration Management (CM)
   How CM relates to DevOps
     Automated CM is normally included in an automated DevOps pipeline.
 
+</pre>
+Defect Management
+-
+<pre>
+  Defect Management is the process of identifying, recording, analyzing, classifying, tracking, and closing defects found during software testing.
+  1. Why is Defect Management important?
+    The main objectives are:   
+      |_ Resolve defects: Provide developers with enough information to understand and fix the problem.    
+      |_ Track quality: Understand how many defects exist and how they affect the software's quality.    
+      |_ Improve processes: Identify recurring problems and improve development and testing practices.
+  Defect Management Workflow
+          1. Log the defect
+          2. Analyze and classify
+          3. Decide on a response
+          4. Fix and verify (if required)
+          5. Close the defect report
+  Is every reported anomaly a real defect
+    A reported anomaly is not automatically a confirmed defect. It must be analyzed.
+
+  Severity vs Priority
+  Severity: How seriously the defect impacts the system or stakeholders.   -> impact
+  Priority: How urgently the defect should be fixed.                       -> urgency
+
+  What information does a defect report contain?
+      • Unique identifier
+      • Title with a short summary of the anomaly being reported
+      • Date when the anomaly was observed, issuing organization, and author, including their role
+      • Identification of the test object and test environment
+      • Context of the defect (e.g., test case being run, test activity being performed, SDLC phase, and
+        other relevant information such as the test technique, checklist or test data being used)
+      • Description of the failure to enable reproduction and resolution including the steps that detected
+        the anomaly, and any relevant test logs, database dumps, screenshots, or recordings
+      • Expected results and actual results
+      • Severity of the defect (degree of impact) on the interests of stakeholders or requirements
+      • Priority to fix
+      • Status of the defect (e.g., open, deferred, duplicate, waiting to be fixed, awaiting confirmation
+        testing, re-opened, closed, rejected)
+      • References (e.g., to the test case)
+
+  What about defects found during static testing?
+      Static testing examines work products without executing the software,
+      such as reviewing code or analyzing source code with static analysis tools.
+      ISTQB recommends handling defects from static testing in a similar way to defects found during dynamic testing.
 
 </pre>
-
+<pre>
+  Note 
+  One additional ISTQB fact: ISO/IEC/IEEE 29119-3 refers to defect reports as incident reports.
+</pre>
 
 
 
