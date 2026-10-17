@@ -494,6 +494,38 @@ Test Monitoring, Test Control and Test Completion
       Structured reports that communicate testing progress or completion.
       Best for: Formal stakeholder communication, traceability and projects requiring documented evidence.
 </pre>
+Configuration Management (CM)
+-
+<pre>
+  Configuration Management (CM) is the process of identifying, controlling, tracking, and managing changes to
+  testing documents, software, and test environments.
+  A. Configuration Item (CI)
+      A Configuration Item is any work product that needs to be identified and controlled.
+      eg. test plans, test strategies, test conditions, test cases, test scripts, test results, test
+          logs, and test reports as configuration items.
+  B. Version Control
+      Version control means keeping track of different versions of a configuration item.
+  C. Baseline
+      A baseline is an approved version of a configuration item or a set of configuration items
+      that can only be changed through a formal change control process.
+  D. Change Control
+      Change control is the formal process for requesting, evaluating, approving or rejecting, and implementing changes to a baseline.
+  E. Reverting to a Previous Baseline
+      CM maintains records of previous baselines, so a team can restore an earlier configuration when necessary.
+
+  The two main purposes of CM in testing
+      1. Unique identification, version control, and traceability
+          Every configuration item must be uniquely identified, version-controlled, tracked for changes, and related to other configuration items.
+          Example: Link a requirement to its test case, test script, and test result so the team can trace them throughout testing.
+      2. Unambiguous references
+          Test documentation must clearly identify the exact software and document versions being used.
+          Example: Instead of writing “Tested the latest build,” write “Tested application Build 11 using Test Cases V1.2.”
+
+  How CM relates to DevOps
+    Automated CM is normally included in an automated DevOps pipeline.
+
+
+</pre>
 
 
 
