@@ -216,6 +216,285 @@ Testing Quadrants
     Often automated
 </pre>
 
+Risk Management
+-
+<pre>
+  Risk management is the process of identifying possible problems, understanding their effects, and taking action to reduce them.
+    Its benefits include:
+      |_ Increasing the chances of achieving objectives.
+      |_ Improving product quality.
+      |_ Increasing stakeholders' confidence and trust.
+  Main risk management activities
+  1. Risk Analysis
+    Identify possible risks and assess how serious they are.    
+      Risk identification: What could go wrong?    
+      Risk assessment: How likely is it, and how much damage could it cause?
+
+  2. Risk Control
+    Take action to reduce risks and keep checking them.    
+      Risk mitigation: What can we do to reduce the risk?    
+      Risk monitoring: Is the risk changing? Are our actions working?
+
+  What is Risk-Based Testing?
+  Risk-based testing (RBT) is a testing approach in which testing activities are selected, prioritized, and managed based on risk.
+  In simple words, test the most risky features first.
+  e.g in banking application payemnt feature is at higher risk to test it first
+      then login then css based stuff 
+
+  Risk Definition and Risk Attributes
+    A risk is a potential event or situation that could cause a negative effect if it occurs.
+    Risk has two main attributes:
+      A. Risk Likelihood
+        Likelihood means the probability that a risk will occur.
+        For example:
+          A bug has a 10% chance of occurring → low likelihood.
+          A bug has an 80% chance of occurring → high likelihood.
+      B. Risk Impact
+        Impact means the amount of harm or damage caused if the risk occurs.
+        For example:      
+          A spelling mistake on a webpage → low impact.        
+          An incorrect bank balance → high impact.
+    so formula for risk level : 
+      |_ Risk Level=Likelihood×Impact
+
+  Project Risks vs Product Risks
+    A. Project Risks
+      Project risks affect the project's ability to meet its objectives, particularly its schedule, budget, or scope.   
+      Examples:      
+        Organizational issues: Requirements or deliverables are delayed.      
+        People issues: Developers lack skills or team members have communication problems.      
+        Technical issues: Poor testing tools or uncontrolled changes to project scope.      
+        Supplier issues: A third-party company fails to deliver required software.
+    B. Product Risks
+      Product risks affect the quality of the software product and may cause problems for its users.
+      Examples:      
+        Missing or incorrect functionality.      
+        Incorrect calculations.     
+        Runtime errors or application crashes.      
+        Poor performance or slow response time.      
+        Security vulnerabilities.      
+        Poor user experience.
+</pre>
+Product Risk Analysis
+-
+<pre>
+  Identify what can go wrong in the software, evaluate how serious it is, and plan testing accordingly.
+  Product risk analysis is the process of identifying and evaluating risks related to software quality
+  so that testing can focus on the areas where failures would matter most.
+  What is residual product risk?
+    Residual risk is the risk that remains even after risk-reduction activities, including testing, have been performed.
+  For example:
+    Testers identify a possible money transfer error.
+    Developers fix the defect.
+    Testers execute tests to verify the fix.
+    Some possibility of an undiscovered defect still remains.
+    That remaining possibility is residual risk.
+  
+    The goal is to minimize residual product risk to an acceptable level, not necessarily eliminate every risk.
+  Important ISTQB point: 
+    Product risk analysis should ideally start early in the Software Development Life Cycle (SDLC), 
+    rather than waiting until the software is complete.
+
+  Two Main Activities of Product Risk Analysis
+  1. Risk Identification
+    Question: What could go wrong?   
+    The objective is to create a comprehensive list of possible product risks. 
+    Common techniques include:
+      Brainstorming: Team members share ideas about possible failures.
+      Workshops: Stakeholders discuss risks together.
+      Interviews: Ask developers, users, testers, and business experts about possible problems.
+      Cause-effect diagrams: Identify possible causes of a problem and their effects.
+  2. Risk Assessment
+    Question: How serious are these risks?
+    After identifying risks, the team evaluates and prioritizes them.   
+    Risk assessment includes:    
+      Categorizing the identified risks.   
+      Determining risk likelihood.   
+      Determining risk impact.    
+      Evaluating the risk level.   
+      Prioritizing risks.  
+      Proposing ways to handle them.
+  Why do we categorize risks?
+    For example, security risks can be grouped together, performance risks can be grouped together, and usability risks can be grouped together.
+    This helps because risks in the same category can often be mitigated using similar approaches.
+    For instance, several security risks might be addressed through access-control reviews and security testing.
+  
+  Quantitative vs Qualitative Risk Assessment
+    A. Quantitative approach
+      In this approach, the risk level is calculated numerically.
+      Risk Level=Likelihood×Impact
+    B. Qualitative approach
+      In this approach,
+      the risk level is determined using categories such as Low, Medium, and High, commonly organized in a risk matrix.
+      rows can be likelihood and columns can be impact forming 2x2 matrix of high medium low values
+
+  How Does Product Risk Analysis Influence Testing?
+  1. Determine the scope of testing
+  2. Determine test levels and test types
+  3. Determine test techniques and coverage
+  4. Estimate test effort
+  5. Prioritize testing
+  6. Identify additional risk-reduction activities
+</pre>
+Product Risk Control
+-
+<pre>
+  After identifying and assessing product risks, take action to reduce them and continuously check whether those actions are working.
+  1. Risk Mitigation
+    Take action to reduce the risk.
+  2. Risk Monitoring
+    Keep checking the risk and whether mitigation is effective.
+
+  What are the different risk response options?
+    Mitigation: Reduce the risk.
+    Acceptance: Live with the risk.   --> low level risk whih dont have any effect in functionality,
+    Transfer: Shift certain risk responsibilities or consequences.  --> Transfer responsibility for handling certain consequences of a risk
+                to another party through an arrangement or contract
+    Contingency plan: Prepare what to do if the risk happens.  --> If the payment gateway goes down,
+                  automatically switch to a backup gateway or provide another safe payment option.
+
+  How can testing help mitigate product risks?
+    1. Select testers with the right experience and skills
+        Why? Skilled testers are more likely to discover defects related to their area of expertise.
+    2. Apply an appropriate level of independence of testing
+        Testing should be independent enough to provide an effective, unbiased examination.
+        Why? People may miss mistakes in their own work because they are familiar with their assumptions.
+    3. Conduct reviews and perform static analysis
+        Examine work products or analyze code without executing the software.
+        Example: A code review identifies a missing authorization check before the application is released.
+    4. Apply appropriate test techniques and coverage levels
+        Why? Appropriate techniques help discover defects in high-risk scenarios.
+    5. Apply appropriate test types for the affected quality characteristics
+        Why? Different risks require different types of testing.
+    6. Perform dynamic testing, including regression testing
+        
+</pre>
+Test Monitoring, Test Control and Test Completion
+-
+<pre>
+  1. Test Monitoring — Are we on track?
+    The test manager compares the actual progress with the planned progress and identifies that testing is behind schedule.
+  2. Test Control — What should we do now?
+    In simple words, after identifying a problem, you decide what action to take.
+    since we are behind on schedule
+    Possible actions:
+      Add another tester.
+      Reprioritizing tests when an identified risk becomes an issue
+      Prioritize high-risk test cases.
+      Adjust the test schedule.
+      Investigate delays in the test environment.
+  3. Test Completion — What do we do after testing?
+      Test completion involves collecting and consolidating information from completed test activities,
+      including testware, lessons learned and other relevant information.
+      When does Test Completion happen?
+        |_ When a test level is completed, such as system testing.
+        |_ When an Agile iteration ends.
+        |_ When a test project is completed or cancelled.
+        |_ When a software system is released.
+        |_ When a maintenance release is completed.
+</pre>
+<pre>
+  Metrics Used in Testing
+  Test metrics are measurements used to understand how testing is progressing,
+  how good the software is, and how effective the testing activities are.
+  • Project progress metrics (e.g., task completion, resource usage, test effort)
+  • Test progress metrics (e.g., test case implementation progress, test environment preparation
+    progress, number of test cases run/not run, passed/failed, test execution time)
+  • Product quality metrics (e.g., availability, response time, mean time to failure)
+  • Defect metrics (e.g., number and priorities of defects found/fixed, defect density, defect detection
+    percentage)
+  • Risk metrics (e.g., residual risk level)
+  • Coverage metrics (e.g., requirements coverage, code coverage)
+  • Cost metrics (e.g., cost of testing, organizational cost of quality)
+
+  how to identify the correct metric
+    The question mentions tasks, resources or effort → Project progress metrics.
+    The question mentions test cases executed, passed, failed or the test environment → Test progress metrics.   
+    The question mentions response time, availability or MTTF → Product quality metrics.    
+    The question mentions defects found, fixed, density or detection → Defect metrics.    
+    The question mentions remaining risk after mitigation → Risk metrics.    
+    The question mentions requirements or code exercised → Coverage metrics.    
+    The question mentions testing expenditure or cost of quality → Cost metrics.
+</pre>
+<pre>
+  Purpose, Content and Audience for Test Reports
+  
+  Remember this simple trick:
+    Progress Report = What is happening now?
+    Completion Report = What happened after testing finished?
+  1. What is test reporting?
+    Test reporting means summarizing and communicating information about testing to stakeholders.
+  
+  Test Progress Report
+    To communicate the current status of testing so that stakeholders can monitor progress and take corrective action when needed.
+    What does a Test Progress Report contain?
+
+    1. Test period -> The period covered by the report, such as Monday to Friday.
+
+    2. Test progress  -> Whether testing is ahead of or behind schedule, including deviations.
+
+    3. Impediments and workarounds -> Problems affecting testing and how the team is dealing with them.
+
+    4. Test metrics -> Numbers such as tests passed, failed, executed and coverage achieved.
+
+    5. New and changed risks -> Risks that appeared or changed during the reporting period.
+
+    6. Next period's plan -> Testing activities planned for the upcoming period.
+
+  Test Completion Report
+    To summarize a completed stage of testing, evaluate the results against the original plan 
+    and provide information useful for future testing or release decisions.
+
+
+    1. Test summary -> Overall summary of the testing performed and its results.
+
+    2. Testing and product quality evaluation -> Evaluation against the original test plan, objectives and exit criteria.
+
+    3. Deviations from the test plan -> Differences in planned versus actual schedule, duration or effort.
+
+    4. Impediments and workarounds -> Problems encountered and how they were handled.
+
+    5. Test metrics -> Metrics collected from test progress reports.
+
+    6. Unmitigated risks and unfixed defects -> Remaining risks and defects that were not resolved.
+
+    7. Lessons learned -> What worked well, what went wrong and what can improve future testing.
+
+</pre>
+<pre>
+  Audience of test reports
+  Different stakeholders need different information. The audience affects the content, formality and frequency of reporting.
+  For example:
+    Testers within the same team: Usually need frequent, informal updates about execution, blockers and immediate tasks.
+    Test managers and project managers: Need progress, schedule deviations, resources, metrics and risks to control testing.
+    Senior management or clients: Often need concise summaries, significant risks, product quality and information supporting decisions.
+    Stakeholders reviewing a completed project or test level: Need a completion summary, evaluation against objectives, outstanding defects and           lessons learned.
+  Formality and frequency
+    Reports shared within the same team are often frequent and informal.
+    A final report for a completed project generally follows an agreed template and is usually prepared once for that completion milestone.
+</pre>
+<pre>
+  Communicating the Status of Testing
+    Communicating the status of testing means sharing information about 
+    testing progress, problems, risks and results with the relevant people.
+  Ways of Communicating
+    1. Verbal communication
+      Communicating through face-to-face meetings, daily stand-ups or discussions.
+      Best for: Quick updates, clarifications and immediate problem-solving.
+    2. Dashboards
+      Visual displays of testing information, often updated regularly or automatically.
+      Best for: Quickly understanding progress, trends and bottlenecks.
+    3. Electronic communication channels
+      Sharing testing updates through email, chat or other electronic messaging tools.
+      Best for: Quick updates, notifications and communication across locations.
+    4. Online documentation
+      Recording testing information in shared online documents, wikis or project spaces.
+      Best for: Information that people need to access and refer to later.
+    5. Formal test reports
+      Structured reports that communicate testing progress or completion.
+      Best for: Formal stakeholder communication, traceability and projects requiring documented evidence.
+</pre>
+
 
 
 
